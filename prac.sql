@@ -70,3 +70,22 @@
 -- -- Find the manager who manages the highest number of employees.
 
 -- select manager_id , count(employee_id) as employee_count from Employees group by manager_id order by employee_count desc limit 1;
+
+
+-- -- Find departments that have more than 10 employees.
+
+-- select department from Employees group by department having count(employee_id) > 10;
+
+
+-- -- Find the manager who manages the highest number of employee
+
+-- select manager_id from Employees group by manager_id order by count(employee_id) desc limit 1; 
+
+
+-- -- Find all employees who are not assigned to any project.
+
+-- select employee_id from Employees where project_id is NULL;
+
+-- --Find the number of employees assigned to each project.
+
+-- select project_id, count(employee_id) from Employees group by project_id;
